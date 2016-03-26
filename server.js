@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path'); // модуль для парсинга пути
 var log = require('./libs/log')(module);
 var app = express();
-var logger = require('morgan');
+//var logger = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
@@ -25,7 +25,7 @@ db.once('open', function callback () {
 });*/
 
 
-app.use(logger('dev')); // выводим все запросы со статусами в консоль
+//app.use(logger('dev')); // выводим все запросы со статусами в консоль
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false })); // стандартный модуль, для парсинга JSON в запросах
 app.use(methodOverride()); // поддержка put и delete
