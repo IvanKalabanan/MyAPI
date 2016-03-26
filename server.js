@@ -111,8 +111,8 @@ app.use(function(err, req, res, next){
 });
 });
 // -
+app.set('port', (process.env.PORT || 1337));
 
-
-app.listen(80,'192.168.0.102', function(){
-    log.info('Express server listening on port 1337');
+app.listen(app.get('port'), function(){
+    console.log('Node app is running on port', app.get('port'));
 });
